@@ -1,0 +1,30 @@
+# HazardNet
+
+> HazardNet is an open-source deep learning framework for thermal hazard (thermal anomaly) prediction in HPC datacenters and supercomputers. It predicts whether a thermal hazard is likely within an upcoming prediction horizon from compute-node temperature and power time-series sensor data, framed as a binary classification problem.
+
+HazardNet is a research codebase for HPC operators, datacenter facility engineers, and machine-learning researchers working on datacenter thermal management, anomaly detection, and predictive maintenance.
+
+Key facts:
+- HazardNet predicts forthcoming thermal hazards in datacenters from time series of compute-node inlet/outlet temperature and power consumption.
+- The output is a binary classification: likely forthcoming thermal hazard, or not.
+- The reference prediction horizon used in the study is 6 hours, chosen in consultation with the facility manager.
+- HazardNet implements Temporal Convolutional Network (TCN) models in 1D, 2D, and 3D convolutional input variants (PyTorch), an LSTM model (TensorFlow/Keras), and an SVM baseline (scikit-learn).
+- Models consume a sliding time window (36 time steps in the provided scripts) of node sensor readings.
+- The dataset comes from the Tier-0 supercomputer Marconi A2 at CINECA, covering 3312 compute nodes across 2019, collected via the ExaMon monitoring infrastructure.
+- HazardNet is written in Python and licensed under Apache-2.0.
+- HazardNet is a research codebase accompanying a scientific manuscript, not a packaged production-ready library.
+
+## Repository
+- Source code and README: https://github.com/MSKazemi/HazardNet
+- License (Apache-2.0): https://github.com/MSKazemi/HazardNet/blob/main/LICENSE
+- Citation metadata: https://github.com/MSKazemi/HazardNet/blob/main/CITATION.cff
+
+## Dataset
+- HazardNet dataset (Marconi A2 / CINECA) on Zenodo: https://doi.org/10.5281/zenodo.10050368
+
+## Training scripts
+- TCN (1D convolution): https://github.com/MSKazemi/HazardNet/blob/main/Train_TCN_1D3312C_TS.py
+- TCN (2D convolution): https://github.com/MSKazemi/HazardNet/blob/main/Train_TCN_2D1C_TS.py
+- TCN (3D convolution): https://github.com/MSKazemi/HazardNet/blob/main/Train_TCN_3D36C_TS.py
+- LSTM: https://github.com/MSKazemi/HazardNet/blob/main/Train_LSTM_TS.py
+- SVM baseline: https://github.com/MSKazemi/HazardNet/blob/main/Train_SVM_TS.py
