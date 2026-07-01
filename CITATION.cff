@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use HazardNet in your research, please cite this software and the associated dataset."
+title: "HazardNet: A Thermal Hazard Prediction Framework for Datacenters"
+abstract: >-
+  HazardNet is an open-source deep learning framework for thermal hazard
+  (thermal anomaly) prediction in HPC datacenters and supercomputers. It uses
+  time-series data from compute-node temperature and power sensors to predict
+  whether a thermal hazard is likely within an upcoming prediction horizon,
+  framed as a binary classification problem. The framework implements Temporal
+  Convolutional Network (TCN, in 1D/2D/3D convolutional variants), LSTM, and SVM
+  models over a complete data-preprocessing, training, and inference pipeline.
+type: software
+authors:
+  - given-names: Mohsen
+    family-names: Seyedkazemi Ardebili
+    email: mohsen.seyedkazemi@gmail.com
+repository-code: "https://github.com/MSKazemi/HazardNet"
+url: "https://github.com/MSKazemi/HazardNet"
+license: Apache-2.0
+keywords:
+  - deep learning
+  - time series
+  - anomaly detection
+  - thermal management
+  - datacenter
+  - high-performance computing
+  - predictive maintenance
+  - temporal convolutional network
+  - LSTM
+  - PyTorch
+references:
+  - type: data
+    title: "HazardNet dataset (Marconi A2, CINECA): inlet/outlet temperatures and power consumption"
+    doi: "10.5281/zenodo.10050368"
+    url: "https://doi.org/10.5281/zenodo.10050368"
